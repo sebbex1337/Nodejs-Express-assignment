@@ -5,13 +5,15 @@ body {
 }
 
 header {
-	background-color: #4f8bb0;
+	/* background-color: #4f8bb0; */
+	background-color: black;
 	padding: 0.5em 0 0.5em 0;
 	text-align: center;
 }
 
 h1 {
 	text-align: center;
+	color: whitesmoke;
 }
 
 h2 {
@@ -25,7 +27,7 @@ footer {
 }
 
 main {
-	background-color: white;
+	background-color: rgb(205, 205, 205);
 }
 
 button {
@@ -96,8 +98,12 @@ button {
 }
 
 .grid-item {
-	background-color: rgb(158, 53, 53);
+	background-color: rgb(54, 174, 162);
 	padding: 1em;
+}
+
+.btns {
+	display: flex;
 }
 
 /* Form styling */
@@ -107,22 +113,6 @@ form {
 	padding: 1em 1em 2em;
 	text-align: center;
 }
-
-/* button {
-	font-weight: 300;
-	font-size: 1em;
-	text-align: center;
-	cursor: pointer;
-	border: none;
-	border-radius: 0;
-	color: rgb(18, 107, 103);
-	background-color: #4f8bb0;
-	letter-spacing: 0.05em;
-	text-transform: uppercase;
-	padding: 0.5em 1em;
-	width: 100%;
-	max-width: 380px;
-} */
 
 input {
 	margin: 1em auto;
