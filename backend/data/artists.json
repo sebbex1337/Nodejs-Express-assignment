@@ -1,5 +1,6 @@
 [
 	{
+		"id": 1,
 		"name": "Michael Jackson",
 		"birthdate": "29/08/1958",
 		"activeSince": "1964",
@@ -10,6 +11,7 @@
 		"shortDescription": "The King of Pop, known for his iconic music, dance, and humanitarian work."
 	},
 	{
+		"id": 2,
 		"name": "Madonna",
 		"birthdate": "16/08/1958",
 		"activeSince": "1979",
@@ -20,6 +22,7 @@
 		"shortDescription": "The Queen of Pop, a cultural icon who has redefined music and fashion."
 	},
 	{
+		"id": 3,
 		"name": "Bob Marley",
 		"birthdate": "06/02/1945",
 		"activeSince": "1962",
@@ -30,6 +33,7 @@
 		"shortDescription": "Reggae legend and global ambassador for peace and unity through music."
 	},
 	{
+		"id": 4,
 		"name": "Beyoncé",
 		"birthdate": "04/09/1981",
 		"activeSince": "1997",
@@ -40,6 +44,7 @@
 		"shortDescription": "Multi-talented artist, singer, songwriter, and cultural influencer."
 	},
 	{
+		"id": 5,
 		"name": "Elton John",
 		"birthdate": "25/03/1947",
 		"activeSince": "1962",
@@ -50,6 +55,7 @@
 		"shortDescription": "Legendary singer-songwriter with a distinctive voice and flamboyant style."
 	},
 	{
+		"id": 6,
 		"name": "Adele",
 		"birthdate": "05/05/1988",
 		"activeSince": "2006",
@@ -60,6 +66,7 @@
 		"shortDescription": "Powerful vocalist known for emotive pop and soul ballads."
 	},
 	{
+		"id": 7,
 		"name": "Prince",
 		"birthdate": "07/06/1958",
 		"activeSince": "1976",
@@ -70,6 +77,7 @@
 		"shortDescription": "Music icon, singer, songwriter, and virtuoso multi-instrumentalist."
 	},
 	{
+		"id": 8,
 		"name": "Whitney Houston",
 		"birthdate": "09/08/1963",
 		"activeSince": "1982",
@@ -80,6 +88,7 @@
 		"shortDescription": "One of the greatest vocalists, known for her powerful voice and hit ballads."
 	},
 	{
+		"id": 9,
 		"name": "Ed Sheeran",
 		"birthdate": "17/02/1991",
 		"activeSince": "2004",
@@ -90,6 +99,7 @@
 		"shortDescription": "Singer-songwriter with a knack for crafting catchy pop and folk songs."
 	},
 	{
+		"id": 10,
 		"name": "Janet Jackson",
 		"birthdate": "16/05/1966",
 		"activeSince": "1973",

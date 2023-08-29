@@ -1,4 +1,4 @@
-const endpoint = "./backend/data";
+import { getArtists } from "./js-modules/http.js";
 
 window.addEventListener("load", initApp);
 
@@ -43,10 +43,4 @@ function displayArtist(artist) {
 			</article>
 		`
 	);
-}
-
-async function getArtists() {
-	const response = await fetch(`${endpoint}/artists.json`);
-	const data = await response.json();
-	return data;
 }
