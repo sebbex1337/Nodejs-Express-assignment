@@ -7,11 +7,30 @@
 		<title>Artist Library</title>
 	</head>
 	<body>
+		<header>
+			<h1>Artist Library</h1>
+		</header>
 		<main>
-			<header>
-				<h1>Artist Library</h1>
-			</header>
+			<section id="artists" class="grid-container"></section>
+			<form id="form-create">
+				<h2>Create a new User</h2>
+				<input type="text" name="name" placeholder="Type your name" required />
+				<input type="text" name="title" placeholder="Type your title" required />
+				<input type="email" name="mail" placeholder="Type your mail" required />
+				<input type="url" name="image" placeholder="Paste image url" required />
+				<button>Create User</button>
+			</form>
+
+			<form id="form-update">
+				<h2>Update User</h2>
+				<input type="text" name="name" placeholder="Type your name" required />
+				<input type="text" name="title" placeholder="Type your title" required />
+				<input type="email" name="mail" placeholder="Type your mail" required />
+				<input type="url" name="image" placeholder="Paste image url" required />
+				<button>Update User</button>
+			</form>
 		</main>
+		<footer>This is a footer</footer>
 	</body>
 	<script src="./frontend/app.js" type="module"></script>
 </html>

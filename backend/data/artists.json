@@ -1,0 +1,62 @@
+[
+	{
+		"name": "John Smith",
+		"birthdate": "1990-05-15",
+		"activeSince": "2008",
+		"genres": ["Pop", "R&B"],
+		"labels": ["Music Records"],
+		"website": "https://www.johnsmithmusic.com",
+		"image": "https://www.johnsmithmusic.com/images/profile.jpg",
+		"shortDescription": "Soulful pop artist with a unique blend of R&B influences."
+	},
+	{
+		"name": "Emily Johnson",
+		"birthdate": "1985-09-22",
+		"activeSince": "2003",
+		"genres": ["Indie Folk", "Alternative"],
+		"labels": ["Indie Vibes"],
+		"website": "https://www.emilyjohnsonmusic.com",
+		"image": "https://www.emilyjohnsonmusic.com/images/profile.jpg",
+		"shortDescription": "Singer-songwriter creating heartfelt indie folk music with an alternative touch."
+	},
+	{
+		"name": "Carlos Rodriguez",
+		"birthdate": "1982-02-10",
+		"activeSince": "2005",
+		"genres": ["Latin Jazz", "Salsa"],
+		"labels": ["Salsa Sounds", "Jazz Grooves"],
+		"website": "https://www.carlosrodriguezmusic.com",
+		"image": "https://www.carlosrodriguezmusic.com/images/profile.jpg",
+		"shortDescription": "Renowned Latin jazz musician and salsa sensation, bringing rhythm to the world."
+	},
+	{
+		"name": "Sophie Anderson",
+		"birthdate": "1993-07-08",
+		"activeSince": "2010",
+		"genres": ["Electronic", "Synthpop"],
+		"labels": ["ElectroWave Productions"],
+		"website": "https://www.sophieandersonmusic.com",
+		"image": "https://www.sophieandersonmusic.com/images/profile.jpg",
+		"shortDescription": "Electronic artist known for crafting captivating synthpop melodies."
+	},
+	{
+		"name": "David Lee",
+		"birthdate": "1988-03-25",
+		"activeSince": "2006",
+		"genres": ["Rock", "Alternative"],
+		"labels": ["RockStar Records"],
+		"website": "https://www.davidleemusic.com",
+		"image": "https://www.davidleemusic.com/images/profile.jpg",
+		"shortDescription": "Energetic rock musician blending alternative vibes into catchy anthems."
+	},
+	{
+		"name": "Maria Perez",
+		"birthdate": "1995-12-12",
+		"activeSince": "2012",
+		"genres": ["Reggaeton", "Dancehall"],
+		"labels": ["Reggae Beats"],
+		"website": "https://www.mariaperezmusic.com",
+		"image": "https://www.mariaperezmusic.com/images/profile.jpg",
+		"shortDescription": "Reggaeton and dancehall sensation with rhythms that ignite the dancefloor."
+	}
+]
