@@ -1,16 +1,35 @@
-import { getArtists } from "./js-modules/http.js";
+import { createArtist, getArtists } from "./js-modules/http.js";
 
 window.addEventListener("load", initApp);
 
 let artists;
 
-async function initApp() {
-	console.log("Running");
-	artists = await getArtists();
-	console.log(artists);
-	displayArtists(artists);
+function initApp() {
+	updateAristsGrid();
+
+	document.querySelector("#form-create").addEventListener("submit", createArtistClicked);
 }
 
+async function createArtistClicked(event) {
+	event.preventDefault();
+	const form = this;
+	const name = form.name.value;
+	const birthdate = form.birthdate.value;
+	const activeSince = form.activeSince;
+	const genres = form.genres.value;
+	const labels = form.labels.value;
+	const website = form.website.value;
+	const shortDescription = form.shortDescription.value;
+	const image = form.image.value;
+	const response = await createArtist(name, birthdate, activeSince, genres, labels, website, image, shortDescription);
+	if (response.ok) {
+		form.reset();
+		updateAristsGrid();
+		console.log("Artist added");
+	}
+}
+
+/* Display functions */
 function displayArtists(listOfArtists) {
 	document.querySelector("#artists").innerHTML = "";
 
@@ -43,4 +62,10 @@ function displayArtist(artist) {
 			</article>
 		`
 	);
+}
+
+/* Function for updating the artist grid so they don't duplicate */
+async function updateAristsGrid() {
+	artists = await getArtists();
+	displayArtists(artists);
 }

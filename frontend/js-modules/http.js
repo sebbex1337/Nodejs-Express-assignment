@@ -8,6 +8,7 @@ async function getArtists() {
 
 async function createArtist(name, birthdate, activeSince, genres, labels, website, image, shortDescription) {
 	const newArtist = {
+		id: new Date().getTime(),
 		name: name,
 		birthdate: birthdate,
 		activeSince: activeSince,
@@ -25,4 +26,23 @@ async function createArtist(name, birthdate, activeSince, genres, labels, websit
 	return response;
 }
 
-export { endpoint, getArtists, createArtist };
+async function updateArtist(id, name, birthdate, activeSince, genres, labels, website, image, shortDescription) {
+	const artistToUpdate = {
+		name: name,
+		birthdate: birthdate,
+		activeSince: activeSince,
+		genres: genres,
+		labels: labels,
+		website: website,
+		image: image,
+		shortDescription: shortDescription,
+	};
+	const artistAsJson = JSON.stringify(artistToUpdate);
+	const response = await fetch(`${endpoint}/artists/${id}.json`, {
+		method: "PUT",
+		body: artistAsJson,
+	});
+	return response;
+}
+
+export { endpoint, getArtists, createArtist, updateArtist };
