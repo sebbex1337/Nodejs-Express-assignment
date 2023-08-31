@@ -13,7 +13,7 @@ app.listen(port, () => {
 });
 
 app.get("/", (request, response) => {
-	response.send("Hello World!");
+	response.send("Test");
 });
 
 app.get("/artists", async (request, response) => {
@@ -31,6 +31,28 @@ app.post("/artists", async (request, response) => {
 	const artists = JSON.parse(data);
 
 	artists.push(newArtist);
+	fs.writeFile("./backend/data/artists.json", JSON.stringify(artists));
+	response.json(artists);
+});
+
+app.put("/artists/:id", async (request, response) => {
+	const id = Number(request.params.id);
+	console.log(id);
+
+	const data = await fs.readFile("./backend/data/artists.json");
+	const artists = JSON.parse(data);
+	let artistToUpdate = artists.find((artist) => artist.id === id);
+	const body = request.body;
+	console.log(body);
+	console.log(artistToUpdate);
+	artistToUpdate.name = body.name;
+	artistToUpdate.birthdate = body.birthdate;
+	artistToUpdate.activeSince = body.activeSince;
+	artistToUpdate.genres = body.genres;
+	artistToUpdate.labels = body.labels;
+	artistToUpdate.website = body.website;
+	artistToUpdate.image = body.image;
+	artistToUpdate.shortDescription = body.shortDescription;
 	fs.writeFile("./backend/data/artists.json", JSON.stringify(artists));
 	response.json(artists);
 });

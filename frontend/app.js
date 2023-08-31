@@ -1,15 +1,17 @@
-import { createArtist, getArtists } from "./js-modules/http.js";
+import { createArtist, getArtists, updateArtist } from "./js-modules/http.js";
 
 window.addEventListener("load", initApp);
 
-let artists;
+let selectedArtist;
 
 function initApp() {
 	updateAristsGrid();
 
 	document.querySelector("#form-create").addEventListener("submit", createArtistClicked);
+	document.querySelector("#form-update").addEventListener("submit", updateArtistClicked);
 }
 
+/* Event functions */
 async function createArtistClicked(event) {
 	event.preventDefault();
 	const form = this;
@@ -26,6 +28,41 @@ async function createArtistClicked(event) {
 		form.reset();
 		updateAristsGrid();
 		console.log("Artist added");
+	}
+}
+
+function selectArtist(artist) {
+	selectedArtist = artist;
+	const form = document.querySelector("#form-update");
+	console.log(selectedArtist);
+	form.name.value = artist.name;
+	form.birthdate.value = artist.birthdate;
+	form.activeSince.value = artist.activeSince;
+	form.genres.value = artist.genres;
+	form.labels.value = artist.labels;
+	form.website.value = artist.website;
+	form.image.value = artist.image;
+	form.shortDescription.value = artist.shortDescription;
+	form.scrollIntoView({ behavior: "smooth" });
+}
+
+async function updateArtistClicked(event) {
+	event.preventDefault();
+	const form = this;
+	console.log(form.name.value);
+	const name = form.name.value;
+	const birthdate = form.birthdate.value;
+	const activeSince = form.activeSince.value;
+	const genres = form.genres.value;
+	const labels = form.labels.value;
+	const website = form.website.value;
+	const shortDescription = form.shortDescription.value;
+	const image = form.image.value;
+	const response = await updateArtist(name, birthdate, activeSince, genres, labels, website, image, shortDescription);
+	if (response.ok) {
+		form.reset();
+		updateAristsGrid();
+		console.log("Artist updated");
 	}
 }
 
@@ -56,16 +93,19 @@ function displayArtist(artist) {
 				<a href="${artist.website}">Website</a>
 				<p>${artist.shortDescription}</p>
 				<section class="btns">
-					<button>Delete</button>
-					<button>Update</button>
+					<button class="btn-delete">Delete</button>
+					<button class="btn-update">Update</button>
 				</section>
 			</article>
 		`
 	);
+	document
+		.querySelector("#artists article:last-child .btn-update")
+		.addEventListener("click", () => selectArtist(artist));
 }
 
 /* Function for updating the artist grid so they don't duplicate */
 async function updateAristsGrid() {
-	artists = await getArtists();
+	const artists = await getArtists();
 	displayArtists(artists);
 }

@@ -1,118 +1,118 @@
 [
 	{
-		"id": 1,
 		"name": "Michael Jackson",
-		"birthdate": "29/08/1958",
+		"birthdate": "1958-08-29",
 		"activeSince": "1964",
 		"genres": ["Pop", "R&B"],
 		"labels": ["Epic Records"],
 		"website": "https://www.michaeljackson.com",
 		"image": "https://www.michaeljackson.com/images/profile.jpg",
-		"shortDescription": "The King of Pop, known for his iconic music, dance, and humanitarian work."
+		"shortDescription": "The King of Pop, known for his iconic music, dance, and humanitarian work.",
+		"id": 1
 	},
 	{
-		"id": 2,
 		"name": "Madonna",
-		"birthdate": "16/08/1958",
+		"birthdate": "1958-08-16",
 		"activeSince": "1979",
 		"genres": ["Pop", "Dance"],
 		"labels": ["Warner Bros. Records"],
 		"website": "https://www.madonna.com",
 		"image": "https://www.madonna.com/images/profile.jpg",
-		"shortDescription": "The Queen of Pop, a cultural icon who has redefined music and fashion."
+		"shortDescription": "The Queen of Pop, a cultural icon who has redefined music and fashion.",
+		"id": 2
 	},
 	{
-		"id": 3,
 		"name": "Bob Marley",
-		"birthdate": "06/02/1945",
+		"birthdate": "1945-02-06",
 		"activeSince": "1962",
 		"genres": ["Reggae"],
 		"labels": ["Island Records"],
 		"website": "https://www.bobmarley.com",
 		"image": "https://www.bobmarley.com/images/profile.jpg",
-		"shortDescription": "Reggae legend and global ambassador for peace and unity through music."
+		"shortDescription": "Reggae legend and global ambassador for peace and unity through music.",
+		"id": 3
 	},
 	{
-		"id": 4,
 		"name": "Beyoncé",
-		"birthdate": "04/09/1981",
+		"birthdate": "1981-09-04",
 		"activeSince": "1997",
 		"genres": ["Pop", "R&B"],
 		"labels": ["Columbia Records"],
 		"website": "https://www.beyonce.com",
 		"image": "https://www.beyonce.com/images/profile.jpg",
-		"shortDescription": "Multi-talented artist, singer, songwriter, and cultural influencer."
+		"shortDescription": "Multi-talented artist, singer, songwriter, and cultural influencer.",
+		"id": 4
 	},
 	{
-		"id": 5,
 		"name": "Elton John",
-		"birthdate": "25/03/1947",
+		"birthdate": "1947-03-25",
 		"activeSince": "1962",
 		"genres": ["Pop", "Rock"],
 		"labels": ["Rocket Records"],
 		"website": "https://www.eltonjohn.com",
 		"image": "https://www.eltonjohn.com/images/profile.jpg",
-		"shortDescription": "Legendary singer-songwriter with a distinctive voice and flamboyant style."
+		"shortDescription": "Legendary singer-songwriter with a distinctive voice and flamboyant style.",
+		"id": 5
 	},
 	{
-		"id": 6,
 		"name": "Adele",
-		"birthdate": "05/05/1988",
+		"birthdate": "1988-05-05",
 		"activeSince": "2006",
 		"genres": ["Pop", "Soul"],
 		"labels": ["XL Recordings"],
 		"website": "https://www.adele.com",
 		"image": "https://www.adele.com/images/profile.jpg",
-		"shortDescription": "Powerful vocalist known for emotive pop and soul ballads."
+		"shortDescription": "Powerful vocalist known for emotive pop and soul ballads.",
+		"id": 6
 	},
 	{
-		"id": 7,
 		"name": "Prince",
-		"birthdate": "07/06/1958",
+		"birthdate": "1958-06-07",
 		"activeSince": "1976",
 		"genres": ["Pop", "Funk", "R&B"],
 		"labels": ["Warner Bros. Records"],
 		"website": "https://www.prince.com",
 		"image": "https://www.prince.com/images/profile.jpg",
-		"shortDescription": "Music icon, singer, songwriter, and virtuoso multi-instrumentalist."
+		"shortDescription": "Music icon, singer, songwriter, and virtuoso multi-instrumentalist.",
+		"id": 7
 	},
 	{
-		"id": 8,
 		"name": "Whitney Houston",
-		"birthdate": "09/08/1963",
+		"birthdate": "1963-08-09",
 		"activeSince": "1982",
 		"genres": ["Pop", "R&B"],
 		"labels": ["Arista Records"],
 		"website": "https://www.whitneyhouston.com",
 		"image": "https://www.whitneyhouston.com/images/profile.jpg",
-		"shortDescription": "One of the greatest vocalists, known for her powerful voice and hit ballads."
+		"shortDescription": "One of the greatest vocalists, known for her powerful voice and hit ballads.",
+		"id": 8
 	},
 	{
-		"id": 9,
 		"name": "Ed Sheeran",
-		"birthdate": "17/02/1991",
+		"birthdate": "1991-02-17",
 		"activeSince": "2004",
 		"genres": ["Pop", "Folk"],
 		"labels": ["Asylum Records"],
 		"website": "https://www.edsheeran.com",
 		"image": "https://www.edsheeran.com/images/profile.jpg",
-		"shortDescription": "Singer-songwriter with a knack for crafting catchy pop and folk songs."
+		"shortDescription": "Singer-songwriter with a knack for crafting catchy pop and folk songs.",
+		"id": 9
 	},
 	{
-		"id": 10,
 		"name": "Janet Jackson",
-		"birthdate": "16/05/1966",
+		"birthdate": "1966-05-16",
 		"activeSince": "1973",
 		"genres": ["Pop", "R&B"],
 		"labels": ["A&M Records"],
 		"website": "https://www.janetjackson.com",
 		"image": "https://www.janetjackson.com/images/profile.jpg",
-		"shortDescription": "Iconic artist known for her innovative music, dance, and social impact."
+		"shortDescription": "Iconic artist known for her innovative music, dance, and social impact.",
+		"id": 10
 	},
 	{
 		"name": "test",
 		"birthdate": "1233-03-12",
-		"activeSince": "1233-03-12",
+		"activeSince": "1233",
 		"genres": "test",
 		"labels": "test",
 		"website": "https://erdetfredag.dk/",
