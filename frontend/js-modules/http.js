@@ -1,14 +1,13 @@
-const endpoint = "./backend/data";
+const endpoint = "http://localhost:3333";
 
 async function getArtists() {
-	const response = await fetch(`${endpoint}/artists.json`);
+	const response = await fetch(`${endpoint}/artists`);
 	const data = await response.json();
 	return data;
 }
 
 async function createArtist(name, birthdate, activeSince, genres, labels, website, image, shortDescription) {
 	const newArtist = {
-		id: new Date().getTime(),
 		name: name,
 		birthdate: birthdate,
 		activeSince: activeSince,
@@ -19,9 +18,12 @@ async function createArtist(name, birthdate, activeSince, genres, labels, websit
 		shortDescription: shortDescription,
 	};
 	const artistAsJson = JSON.stringify(newArtist);
-	const response = await fetch(`${endpoint}/artists.json`, {
+	const response = await fetch(`${endpoint}/artists`, {
 		method: "POST",
 		body: artistAsJson,
+		headers: {
+			"Content-Type": "application/json",
+		},
 	});
 	return response;
 }

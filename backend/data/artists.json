@@ -108,5 +108,16 @@
 		"website": "https://www.janetjackson.com",
 		"image": "https://www.janetjackson.com/images/profile.jpg",
 		"shortDescription": "Iconic artist known for her innovative music, dance, and social impact."
+	},
+	{
+		"name": "test",
+		"birthdate": "1233-03-12",
+		"activeSince": "1233-03-12",
+		"genres": "test",
+		"labels": "test",
+		"website": "https://erdetfredag.dk/",
+		"image": "https://share.cederdorff.com/images/petl.jpg",
+		"shortDescription": "kekw",
+		"id": 1693465561841
 	}
 ]

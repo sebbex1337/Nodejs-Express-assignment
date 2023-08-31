@@ -15,7 +15,7 @@ async function createArtistClicked(event) {
 	const form = this;
 	const name = form.name.value;
 	const birthdate = form.birthdate.value;
-	const activeSince = form.activeSince;
+	const activeSince = form.activeSince.value;
 	const genres = form.genres.value;
 	const labels = form.labels.value;
 	const website = form.website.value;

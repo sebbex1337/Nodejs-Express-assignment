@@ -2,10 +2,10 @@
 	"name": "nodejs-express-assignment",
 	"version": "1.0.0",
 	"description": "backend for nodejs-express-assignment",
-	"main": "app.js",
+	"main": "./backend/app.js",
 	"type": "module",
 	"scripts": {
-		"start": "node --watch app.js"
+		"start": "node --watch ./backend/app.js"
 	},
 	"author": "",
 	"license": "ISC",
