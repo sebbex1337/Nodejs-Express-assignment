@@ -51,4 +51,11 @@ async function updateArtist(id, name, birthdate, activeSince, genres, labels, we
 	return response;
 }
 
-export { endpoint, getArtists, createArtist, updateArtist };
+async function deleteArtist(id) {
+	const response = await fetch(`${endpoint}/artists/${id}`, {
+		method: "DELETE",
+	});
+	return response;
+}
+
+export { endpoint, getArtists, createArtist, updateArtist, deleteArtist };

@@ -1,4 +1,4 @@
-import { createArtist, getArtists, updateArtist } from "./js-modules/http.js";
+import { createArtist, getArtists, updateArtist, deleteArtist } from "./js-modules/http.js";
 
 window.addEventListener("load", initApp);
 
@@ -12,6 +12,7 @@ function initApp() {
 }
 
 /* Event functions */
+/* CREATE */
 async function createArtistClicked(event) {
 	event.preventDefault();
 	const form = this;
@@ -43,13 +44,14 @@ function selectArtist(artist) {
 	form.website.value = artist.website;
 	form.image.value = artist.image;
 	form.shortDescription.value = artist.shortDescription;
+
 	form.scrollIntoView({ behavior: "smooth" });
 }
 
+/* UPDATE */
 async function updateArtistClicked(event) {
 	event.preventDefault();
 	const form = this;
-	console.log(form.name.value);
 	const name = form.name.value;
 	const birthdate = form.birthdate.value;
 	const activeSince = form.activeSince.value;
@@ -58,11 +60,30 @@ async function updateArtistClicked(event) {
 	const website = form.website.value;
 	const shortDescription = form.shortDescription.value;
 	const image = form.image.value;
-	const response = await updateArtist(name, birthdate, activeSince, genres, labels, website, image, shortDescription);
+	const response = await updateArtist(
+		selectedArtist.id,
+		name,
+		birthdate,
+		activeSince,
+		genres,
+		labels,
+		website,
+		image,
+		shortDescription
+	);
 	if (response.ok) {
 		form.reset();
 		updateAristsGrid();
 		console.log("Artist updated");
+	}
+}
+
+/* DELETE */
+async function deleteArtistClicked(id) {
+	const response = await deleteArtist(id);
+	if (response.ok) {
+		console.log(`Artist deleted ${id}`);
+		updateAristsGrid();
 	}
 }
 
@@ -102,6 +123,9 @@ function displayArtist(artist) {
 	document
 		.querySelector("#artists article:last-child .btn-update")
 		.addEventListener("click", () => selectArtist(artist));
+	document
+		.querySelector("#artists article:last-child .btn-delete")
+		.addEventListener("click", () => deleteArtistClicked(artist.id));
 }
 
 /* Function for updating the artist grid so they don't duplicate */
