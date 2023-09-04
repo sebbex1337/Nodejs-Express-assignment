@@ -105,7 +105,7 @@ function displayArtist(artist) {
 		"beforeend",
 		/* HTML */ `
 			<article class="grid-item">
-				<img src="" />
+				<img src="${artist.image}" />
 				<h2>${artist.name}</h2>
 				<p>Birthdate: ${artist.birthdate}</p>
 				<p>Active since: ${artist.activeSince}</p>
