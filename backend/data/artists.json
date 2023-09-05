@@ -6,7 +6,7 @@
 		"genres": ["Pop", "R&B"],
 		"labels": ["Epic Records"],
 		"website": "https://www.michaeljackson.com",
-		"image": "",
+		"image": "https://m.media-amazon.com/images/M/MV5BMTM1NjExNjg1OV5BMl5BanBnXkFtZTcwMTQ0NzIwMw@@._V1_FMjpg_UX1000_.jpg",
 		"shortDescription": "The King of Pop, known for his iconic music, dance, and humanitarian work.",
 		"id": 1
 	},
@@ -17,7 +17,7 @@
 		"genres": ["Pop", "Dance"],
 		"labels": ["Warner Bros. Records"],
 		"website": "https://www.madonna.com",
-		"image": "https://www.madonna.com/images/profile.jpg",
+		"image": "https://yt3.googleusercontent.com/T8Up4YxiN4wGfkyI6J8OyRbQNWiXWv8Lb-I-CjxE9Hi7DyFbcIShXW3i2TqqmXtECcaqlDXk1A=s900-c-k-c0x00ffffff-no-rj",
 		"shortDescription": "The Queen of Pop, a cultural icon who has redefined music and fashion.",
 		"id": 2
 	},
@@ -28,7 +28,7 @@
 		"genres": ["Reggae"],
 		"labels": ["Island Records"],
 		"website": "https://www.bobmarley.com",
-		"image": "https://www.bobmarley.com/images/profile.jpg",
+		"image": "https://yt3.googleusercontent.com/ytc/AOPolaQlw5OLFmr_0bK5SuYGVzEf2xprKANdPxh025mjNq4=s900-c-k-c0x00ffffff-no-rj",
 		"shortDescription": "Reggae legend and global ambassador for peace and unity through music.",
 		"id": 3
 	},
@@ -39,7 +39,7 @@
 		"genres": ["Pop", "R&B"],
 		"labels": ["Columbia Records"],
 		"website": "https://www.beyonce.com",
-		"image": "https://www.beyonce.com/images/profile.jpg",
+		"image": "https://cdn.britannica.com/51/188751-050-D4E1CFBC/Beyonce-2010.jpg",
 		"shortDescription": "Multi-talented artist, singer, songwriter, and cultural influencer.",
 		"id": 4
 	},
@@ -50,7 +50,7 @@
 		"genres": ["Pop", "Rock"],
 		"labels": ["Rocket Records"],
 		"website": "https://www.eltonjohn.com",
-		"image": "https://www.eltonjohn.com/images/profile.jpg",
+		"image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Glasto2023_%28419_of_468%29_%2853009098414%29_%28cropped%29.jpg/800px-Glasto2023_%28419_of_468%29_%2853009098414%29_%28cropped%29.jpg",
 		"shortDescription": "Legendary singer-songwriter with a distinctive voice and flamboyant style.",
 		"id": 5
 	},
@@ -61,7 +61,7 @@
 		"genres": ["Pop", "Soul"],
 		"labels": ["XL Recordings"],
 		"website": "https://www.adele.com",
-		"image": "https://www.adele.com/images/profile.jpg",
+		"image": "https://people.com/thmb/d2E9WdUtqnGNMI6AZxIZmoAAXvU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(1026x337:1028x339)/adele-performing-081423-9ee79d1bcf434576ab437b0691653799.jpg",
 		"shortDescription": "Powerful vocalist known for emotive pop and soul ballads.",
 		"id": 6
 	},
@@ -72,7 +72,7 @@
 		"genres": ["Pop", "Funk", "R&B"],
 		"labels": ["Warner Bros. Records"],
 		"website": "https://www.prince.com",
-		"image": "https://www.prince.com/images/profile.jpg",
+		"image": "https://metalworksstudios.com/wp-content/uploads/2019/11/Metalworks-Studios-Clients-Prince-1-square.jpg",
 		"shortDescription": "Music icon, singer, songwriter, and virtuoso multi-instrumentalist.",
 		"id": 7
 	},
@@ -83,7 +83,7 @@
 		"genres": ["Pop", "R&B"],
 		"labels": ["Arista Records"],
 		"website": "https://www.whitneyhouston.com",
-		"image": "https://www.whitneyhouston.com/images/profile.jpg",
+		"image": "https://i.guim.co.uk/img/static/sys-images/Music/Pix/pictures/2012/2/14/1329223139260/Whitney-Houston-in-1987-006.jpg?width=465&dpr=1&s=none",
 		"shortDescription": "One of the greatest vocalists, known for her powerful voice and hit ballads.",
 		"id": 8
 	},
@@ -94,7 +94,7 @@
 		"genres": ["Pop", "Folk"],
 		"labels": ["Asylum Records"],
 		"website": "https://www.edsheeran.com",
-		"image": "https://www.edsheeran.com/images/profile.jpg",
+		"image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Ed_Sheeran-6886_%28cropped%29.jpg/1200px-Ed_Sheeran-6886_%28cropped%29.jpg",
 		"shortDescription": "Singer-songwriter with a knack for crafting catchy pop and folk songs.",
 		"id": 9
 	},
@@ -105,7 +105,7 @@
 		"genres": ["Pop", "R&B"],
 		"labels": ["A&M Records"],
 		"website": "https://www.janetjackson.com",
-		"image": "https://www.janetjackson.com/images/profile.jpg",
+		"image": "https://hips.hearstapps.com/hmg-prod/images/janet-jackson-gettyimages-859235050.jpg",
 		"shortDescription": "Iconic artist known for her innovative music, dance, and social impact.",
 		"id": 10
 	}

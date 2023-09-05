@@ -12,14 +12,18 @@ app.listen(port, () => {
 	console.log(`App is running on http://localhost:${port}`);
 });
 
-app.get("/", (request, response) => {
-	response.send("Test");
+app.get("/artists", async (request, response) => {
+	const artists = await getArtists();
+	response.json(artists);
 });
 
-app.get("/artists", async (request, response) => {
-	const data = await fs.readFile("./backend/data/artists.json");
-	const artists = JSON.parse(data);
-	response.json(artists);
+app.get("/artists/:id", async (request, response) => {
+	const id = Number(request.params.id);
+
+	const artists = await getArtists();
+	let artistToGet = artists.find((artist) => artist.id === id);
+
+	response.json(artistToGet);
 });
 
 app.post("/artists", async (request, response) => {
@@ -27,8 +31,7 @@ app.post("/artists", async (request, response) => {
 	console.log(newArtist);
 	newArtist.id = new Date().getTime();
 
-	const data = await fs.readFile("./backend/data/artists.json");
-	const artists = JSON.parse(data);
+	const artists = await getArtists();
 
 	artists.push(newArtist);
 	fs.writeFile("./backend/data/artists.json", JSON.stringify(artists));
@@ -39,8 +42,7 @@ app.put("/artists/:id", async (request, response) => {
 	const id = Number(request.params.id);
 	console.log(id);
 
-	const data = await fs.readFile("./backend/data/artists.json");
-	const artists = JSON.parse(data);
+	const artists = await getArtists();
 	let artistToUpdate = artists.find((artist) => artist.id === id);
 	const body = request.body;
 	console.log(body);
@@ -61,9 +63,13 @@ app.delete("/artists/:id", async (request, response) => {
 	const id = Number(request.params.id);
 	console.log(id);
 
-	const data = await fs.readFile("./backend/data/artists.json");
-	const artists = JSON.parse(data);
+	const artists = await getArtists();
 	let newArtists = artists.filter((artist) => artist.id !== id);
 	fs.writeFile("./backend/data/artists.json", JSON.stringify(newArtists));
 	response.json(artists);
 });
+
+async function getArtists() {
+	const data = await fs.readFile("./backend/data/artists.json");
+	return JSON.parse(data);
+}
