@@ -65,7 +65,7 @@ async function getFavorites() {
 	return data;
 }
 
-async function addToFavorite(name, birthdate, activeSince, genres, labels, website, image, shortDescription) {
+async function addToFavorite(id, name, birthdate, activeSince, genres, labels, website, image, shortDescription) {
 	const newFav = {
 		name: name,
 		birthdate: birthdate,
@@ -75,7 +75,24 @@ async function addToFavorite(name, birthdate, activeSince, genres, labels, websi
 		website: website,
 		image: image,
 		shortDescription: shortDescription,
+		id: id,
 	};
+	const newFavAsJson = JSON.stringify(newFav);
+	const response = await fetch(`${endpoint}/favorites`, {
+		method: "POST",
+		body: newFavAsJson,
+		headers: {
+			"Content-Type": "application/json",
+		},
+	});
+	return response;
+}
+
+async function removeFromFavorite(id) {
+	const response = await fetch(`${endpoint}/favorites/${id}`, {
+		method: "DELETE",
+	});
+	return response;
 }
 
 export { endpoint, getArtists, createArtist, updateArtist, deleteArtist, getFavorites };
