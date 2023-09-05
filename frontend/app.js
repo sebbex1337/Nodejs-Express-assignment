@@ -1,4 +1,5 @@
 import { createArtist, getArtists, updateArtist, deleteArtist } from "./js-modules/http.js";
+import { searchArtists, sortArtists, filterArtists } from "./js-modules/sorting.js";
 
 window.addEventListener("load", initApp);
 
@@ -143,70 +144,20 @@ async function updateAristsGrid() {
 }
 
 /* Sorting */
-function sortArtists(sortBy) {
-	if (sortBy === "") {
-		return artists;
-	}
-	if (sortBy === "name") {
-		return artists.sort((artistA, artistB) => artistA.name.localeCompare(artistB.name));
-	}
-	if (sortBy === "birthdate") {
-		return artists.sort((artistA, artistB) => artistA.birthdate.localeCompare(artistB.birthdate));
-	}
-	if (sortBy === "activeSince") {
-		return artists.sort((artistA, artistB) => artistA.activeSince.localeCompare(artistB.activeSince));
-	}
-}
-
 function sortByChanged(event) {
 	const selectedValue = event.target.value;
-	displayArtists(sortArtists(selectedValue));
+	displayArtists(sortArtists(artists, selectedValue));
 }
 
 /* Filter */
-function filterArtists(filterBy) {
-	switch (filterBy) {
-		case "":
-			return artists;
-		case "Pop":
-			return artists.filter((artist) => artist.genres.includes(filterBy));
-		case "Hip-hop":
-			return artists.filter((artist) => artist.genres.includes(filterBy));
-		case "R&B":
-			return artists.filter((artist) => artist.genres.includes(filterBy));
-		case "Rap":
-			return artists.filter((artist) => artist.genres.includes(filterBy));
-		case "Electronic":
-			return artists.filter((artist) => artist.genres.includes(filterBy));
-		case "Indie":
-			return artists.filter((artist) => artist.genres.includes(filterBy));
-		case "Country":
-			return artists.filter((artist) => artist.genres.includes(filterBy));
-		case "Reggae":
-			return artists.filter((artist) => artist.genres.includes(filterBy));
-		case "Folk":
-			return artists.filter((artist) => artist.genres.includes(filterBy));
-		case "Soul":
-			return artists.filter((artist) => artist.genres.includes(filterBy));
-		case "Rock":
-			return artists.filter((artist) => artist.genres.includes(filterBy));
-		case "Funk":
-			return artists.filter((artist) => artist.genres.includes(filterBy));
-	}
-}
 function filterByChanged(event) {
 	const selectedValue = event.target.value;
-	displayArtists(filterArtists(selectedValue));
+	displayArtists(filterArtists(artists, selectedValue));
 }
 
 /* Searching */
-function searchArtists(searchValue) {
-	searchValue = searchValue.toLowerCase();
-	return artists.filter((artist) => artist.name.toLowerCase().includes(searchValue));
-}
-
 function inputSearchChanged(event) {
 	const value = event.target.value;
 	const artistToSearch = searchArtists(value);
-	displayArtists(artistToSearch);
+	displayArtists(artists, artistToSearch);
 }
