@@ -69,7 +69,24 @@ app.delete("/artists/:id", async (request, response) => {
 	response.json(artists);
 });
 
+/* Helper function */
 async function getArtists() {
 	const data = await fs.readFile("./backend/data/artists.json");
 	return JSON.parse(data);
 }
+
+async function getFavorites() {
+	const data = await fs.readFile("./backend/data/favorites.json");
+	return JSON.parse(data);
+}
+
+/* Favorites */
+app.get("/favorites", async (request, response) => {
+	const favorites = await getFavorites();
+	response.json(favorites);
+});
+
+app.post("/favorites", async (request, response) => {
+	const favorite = await getFavorites();
+	const newFavorite = request.body;
+});

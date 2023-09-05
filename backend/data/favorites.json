@@ -1,0 +1,13 @@
+[
+	{
+		"name": "Michael Jackson",
+		"birthdate": "1958-08-29",
+		"activeSince": "1964",
+		"genres": ["Pop", "R&B"],
+		"labels": ["Epic Records"],
+		"website": "https://www.michaeljackson.com",
+		"image": "https://m.media-amazon.com/images/M/MV5BMTM1NjExNjg1OV5BMl5BanBnXkFtZTcwMTQ0NzIwMw@@._V1_FMjpg_UX1000_.jpg",
+		"shortDescription": "The King of Pop, known for his iconic music, dance, and humanitarian work.",
+		"id": 1
+	}
+]
