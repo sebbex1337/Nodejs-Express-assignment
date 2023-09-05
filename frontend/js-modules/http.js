@@ -39,7 +39,6 @@ async function updateArtist(id, name, birthdate, activeSince, genres, labels, we
 		image: image,
 		shortDescription: shortDescription,
 	};
-	console.log(artistToUpdate);
 	const artistAsJson = JSON.stringify(artistToUpdate);
 	const response = await fetch(`${endpoint}/artists/${id}`, {
 		method: "PUT",

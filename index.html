@@ -10,6 +10,38 @@
 		<header>
 			<h1>Artist Library</h1>
 		</header>
+		<section class="tools-grid">
+			<label for="sort-by" id="sort-by-label"
+				>Sort by:
+				<select id="sort-by">
+					<option value="" selected disabled>Choose here</option>
+					<option value="name">Name</option>
+					<option value="birthdate">Age</option>
+					<option value="activeSince">Active since</option>
+				</select>
+			</label>
+			<label for="filter-by" id="filter-by-label">
+				Filter by:
+				<select id="filter-by">
+					<option value="" selected>No filter</option>
+					<option value="Pop">Pop</option>
+					<option value="Hip-hop">Hip-hop</option>
+					<option value="R&B">R&B</option>
+					<option value="Rap">Rap</option>
+					<option value="Electronic">Electronic</option>
+					<option value="Indie">Indie</option>
+					<option value="Country">Country</option>
+					<option value="Reggae">Raggae</option>
+					<option value="Folk">Folk</option>
+					<option value="Funk">Funk</option>
+					<option value="Rock">Rock</option>
+					<option value="Soul">Soul</option>
+				</select>
+			</label>
+			<div>
+				<input id="input-search" type="search" placeholder="Search by name" />
+			</div>
+		</section>
 		<main>
 			<section id="artists" class="grid-container"></section>
 			<form id="form-create">
@@ -31,7 +63,10 @@
 			<form id="form-update">
 				<h2>Update Artist</h2>
 				<input type="text" name="name" placeholder="Type your name" required />
-				<input type="date" name="birthdate" placeholder="Type your birthdate" required />
+				<label>
+					Birthdate
+					<input type="date" name="birthdate" placeholder="Type your birthdate" required />
+				</label>
 				<input type="text" name="activeSince" placeholder="Type active since year XXXX" required />
 				<input type="text" name="genres" placeholder="Type your genres" required />
 				<input type="text" name="labels" placeholder="Type your label" required />

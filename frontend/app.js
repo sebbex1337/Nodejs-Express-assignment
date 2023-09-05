@@ -3,12 +3,17 @@ import { createArtist, getArtists, updateArtist, deleteArtist } from "./js-modul
 window.addEventListener("load", initApp);
 
 let selectedArtist;
+let artists;
 
 function initApp() {
 	updateAristsGrid();
 
 	document.querySelector("#form-create").addEventListener("submit", createArtistClicked);
 	document.querySelector("#form-update").addEventListener("submit", updateArtistClicked);
+	document.querySelector("#sort-by").addEventListener("change", sortByChanged);
+	document.querySelector("#filter-by").addEventListener("change", filterByChanged);
+	document.querySelector("#input-search").addEventListener("keyup", inputSearchChanged);
+	document.querySelector("#input-search").addEventListener("search", inputSearchChanged);
 }
 
 /* Event functions */
@@ -106,16 +111,19 @@ function displayArtist(artist) {
 		/* HTML */ `
 			<article class="grid-item">
 				<img src="${artist.image}" />
-				<h2>${artist.name}</h2>
-				<p>Birthdate: ${artist.birthdate}</p>
-				<p>Active since: ${artist.activeSince}</p>
-				<p>Genres: ${artist.genres}</p>
-				<p>Labels: ${artist.labels}</p>
-				<a href="${artist.website}">Website</a>
-				<p>${artist.shortDescription}</p>
+				<section>
+					<h2>${artist.name}</h2>
+					<p>Birthdate: ${artist.birthdate}</p>
+					<p>Active since: ${artist.activeSince}</p>
+					<p>Genres: ${artist.genres}</p>
+					<p>Labels: ${artist.labels}</p>
+					<a href="${artist.website}">Website</a>
+					<p>${artist.shortDescription}</p>
+				</section>
 				<section class="btns">
 					<button class="btn-delete">Delete</button>
 					<button class="btn-update">Update</button>
+					<button class="btn-favorite">Add to favorite</button>
 				</section>
 			</article>
 		`
@@ -130,6 +138,75 @@ function displayArtist(artist) {
 
 /* Function for updating the artist grid so they don't duplicate */
 async function updateAristsGrid() {
-	const artists = await getArtists();
+	artists = await getArtists();
 	displayArtists(artists);
+}
+
+/* Sorting */
+function sortArtists(sortBy) {
+	if (sortBy === "") {
+		return artists;
+	}
+	if (sortBy === "name") {
+		return artists.sort((artistA, artistB) => artistA.name.localeCompare(artistB.name));
+	}
+	if (sortBy === "birthdate") {
+		return artists.sort((artistA, artistB) => artistA.birthdate.localeCompare(artistB.birthdate));
+	}
+	if (sortBy === "activeSince") {
+		return artists.sort((artistA, artistB) => artistA.activeSince.localeCompare(artistB.activeSince));
+	}
+}
+
+function sortByChanged(event) {
+	const selectedValue = event.target.value;
+	displayArtists(sortArtists(selectedValue));
+}
+
+/* Filter */
+function filterArtists(filterBy) {
+	switch (filterBy) {
+		case "":
+			return artists;
+		case "Pop":
+			return artists.filter((artist) => artist.genres.includes(filterBy));
+		case "Hip-hop":
+			return artists.filter((artist) => artist.genres.includes(filterBy));
+		case "R&B":
+			return artists.filter((artist) => artist.genres.includes(filterBy));
+		case "Rap":
+			return artists.filter((artist) => artist.genres.includes(filterBy));
+		case "Electronic":
+			return artists.filter((artist) => artist.genres.includes(filterBy));
+		case "Indie":
+			return artists.filter((artist) => artist.genres.includes(filterBy));
+		case "Country":
+			return artists.filter((artist) => artist.genres.includes(filterBy));
+		case "Reggae":
+			return artists.filter((artist) => artist.genres.includes(filterBy));
+		case "Folk":
+			return artists.filter((artist) => artist.genres.includes(filterBy));
+		case "Soul":
+			return artists.filter((artist) => artist.genres.includes(filterBy));
+		case "Rock":
+			return artists.filter((artist) => artist.genres.includes(filterBy));
+		case "Funk":
+			return artists.filter((artist) => artist.genres.includes(filterBy));
+	}
+}
+function filterByChanged(event) {
+	const selectedValue = event.target.value;
+	displayArtists(filterArtists(selectedValue));
+}
+
+/* Searching */
+function searchArtists(searchValue) {
+	searchValue = searchValue.toLowerCase();
+	return artists.filter((artist) => artist.name.toLowerCase().includes(searchValue));
+}
+
+function inputSearchChanged(event) {
+	const value = event.target.value;
+	const artistToSearch = searchArtists(value);
+	displayArtists(artistToSearch);
 }
