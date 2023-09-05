@@ -60,7 +60,22 @@ async function deleteArtist(id) {
 
 /* Favorites */
 async function getFavorites() {
-	
+	const response = await fetch(`${endpoint}/favorites`);
+	const data = await response.json();
+	return data;
 }
 
-export { endpoint, getArtists, createArtist, updateArtist, deleteArtist };
+async function addToFavorite(name, birthdate, activeSince, genres, labels, website, image, shortDescription) {
+	const newFav = {
+		name: name,
+		birthdate: birthdate,
+		activeSince: activeSince,
+		genres: genres,
+		labels: labels,
+		website: website,
+		image: image,
+		shortDescription: shortDescription,
+	};
+}
+
+export { endpoint, getArtists, createArtist, updateArtist, deleteArtist, getFavorites };
