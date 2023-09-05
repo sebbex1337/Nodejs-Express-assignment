@@ -1,5 +1,6 @@
 const endpoint = "http://localhost:3333";
 
+/* Artists */
 async function getArtists() {
 	const response = await fetch(`${endpoint}/artists`);
 	const data = await response.json();
@@ -55,6 +56,11 @@ async function deleteArtist(id) {
 		method: "DELETE",
 	});
 	return response;
+}
+
+/* Favorites */
+async function getFavorites() {
+	
 }
 
 export { endpoint, getArtists, createArtist, updateArtist, deleteArtist };

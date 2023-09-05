@@ -66,17 +66,7 @@ async function updateArtistClicked(event) {
 	const website = form.website.value;
 	const shortDescription = form.shortDescription.value;
 	const image = form.image.value;
-	const response = await updateArtist(
-		selectedArtist.id,
-		name,
-		birthdate,
-		activeSince,
-		genres,
-		labels,
-		website,
-		image,
-		shortDescription
-	);
+	const response = await updateArtist(selectedArtist.id, name, birthdate, activeSince, genres, labels, website, image, shortDescription);
 	if (response.ok) {
 		form.reset();
 		updateAristsGrid();
@@ -124,17 +114,12 @@ function displayArtist(artist) {
 				<section class="btns">
 					<button class="btn-delete">Delete</button>
 					<button class="btn-update">Update</button>
-					<button class="btn-favorite">Add to favorite</button>
 				</section>
 			</article>
 		`
 	);
-	document
-		.querySelector("#artists article:last-child .btn-update")
-		.addEventListener("click", () => selectArtist(artist));
-	document
-		.querySelector("#artists article:last-child .btn-delete")
-		.addEventListener("click", () => deleteArtistClicked(artist.id));
+	document.querySelector("#artists article:last-child .btn-update").addEventListener("click", () => selectArtist(artist));
+	document.querySelector("#artists article:last-child .btn-delete").addEventListener("click", () => deleteArtistClicked(artist.id));
 }
 
 /* Function for updating the artist grid so they don't duplicate */
@@ -158,6 +143,6 @@ function filterByChanged(event) {
 /* Searching */
 function inputSearchChanged(event) {
 	const value = event.target.value;
-	const artistToSearch = searchArtists(value);
-	displayArtists(artists, artistToSearch);
+	const artistToSearch = searchArtists(artists, value);
+	displayArtists(artistToSearch);
 }
