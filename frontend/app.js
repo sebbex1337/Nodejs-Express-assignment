@@ -1,4 +1,4 @@
-import { createArtist, getArtists, updateArtist, deleteArtist } from "./js-modules/http.js";
+import { createArtist, getArtists, updateArtist, deleteArtist, getFavorites } from "./js-modules/http.js";
 import { searchArtists, sortArtists, filterArtists } from "./js-modules/sorting.js";
 
 window.addEventListener("load", initApp);
@@ -51,8 +51,6 @@ function selectArtist(artist) {
 	form.website.value = artist.website;
 	form.image.value = artist.image;
 	form.shortDescription.value = artist.shortDescription;
-	form.favorite.checked = artist.favorite;
-	console.log(form.favorite.value);
 
 	form.scrollIntoView({ behavior: "smooth" });
 }

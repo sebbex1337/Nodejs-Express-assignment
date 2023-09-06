@@ -71,20 +71,43 @@ app.delete("/artists/:id", async (request, response) => {
 
 /* Favorites */
 app.get("/favorites", async (request, response) => {
-	const favorites = await getFavorites();
+	const favoriteIds = await getFavorites();
+
+	const artists = await getArtists();
+	const favorites = artists.filter((artist) => favoriteIds.includes(artist.id));
+
 	response.json(favorites);
 });
 
 app.post("/favorites", async (request, response) => {
-	const newFavorite = request.body;
-	const favorites = await getFavorites();
-	for (const artist of favorites) {
-		if (artist.id !== newFavorite.id) {
-			favorites.push(newFavorite);
-		}
+	const favID = request.body.id;
+	const favs = await getFavorites();
+
+	if (!favs.includes(favID)) {
+		favs.push(favID);
+		writeFavorites(favs);
 	}
-	fs.writeFile("./backend/data/favorites.json", JSON.stringify(favorites));
+
+	const artists = await getArtists();
+	const favorites = artists.filter((artist) => favID.includes(artist.id));
 	response.json(favorites);
+});
+
+app.delete("/favorites/:id", async (request, response) => {
+	const favID = Number(request.params.id);
+	const favs = await getFavorites();
+
+	if (favs.includes(favID)) {
+		const newFavs = favs.filter((id) => id !== favID);
+		writeFavorites(newFavs);
+
+		const artists = await getArtists();
+		const favorites = artists.filter((artist) => newFavs.includes(artist.id));
+
+		response.json(favorites);
+	} else {
+		response.status(404).json({ error: "Favorites does not contain the id!" });
+	}
 });
 
 /* Helper function */
@@ -96,4 +119,8 @@ async function getArtists() {
 async function getFavorites() {
 	const data = await fs.readFile("./backend/data/favorites.json");
 	return JSON.parse(data);
+}
+
+async function writeFavorites(listOfFavorites) {
+	fs.writeFile("./backend/data/favorites.json", JSON.stringify(listOfFavorites));
 }
