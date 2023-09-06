@@ -7,7 +7,7 @@ async function getArtists() {
 	return data;
 }
 
-async function createArtist(name, birthdate, activeSince, genres, labels, website, image, shortDescription) {
+async function createArtist(name, birthdate, activeSince, genres, labels, website, image, shortDescription, favorite) {
 	const newArtist = {
 		name: name,
 		birthdate: birthdate,
@@ -17,6 +17,7 @@ async function createArtist(name, birthdate, activeSince, genres, labels, websit
 		website: website,
 		image: image,
 		shortDescription: shortDescription,
+		favorite: favorite,
 	};
 	const artistAsJson = JSON.stringify(newArtist);
 	const response = await fetch(`${endpoint}/artists`, {
@@ -29,7 +30,7 @@ async function createArtist(name, birthdate, activeSince, genres, labels, websit
 	return response;
 }
 
-async function updateArtist(id, name, birthdate, activeSince, genres, labels, website, image, shortDescription) {
+async function updateArtist(id, name, birthdate, activeSince, genres, labels, website, image, shortDescription, favorite) {
 	const artistToUpdate = {
 		name: name,
 		birthdate: birthdate,
@@ -39,6 +40,7 @@ async function updateArtist(id, name, birthdate, activeSince, genres, labels, we
 		website: website,
 		image: image,
 		shortDescription: shortDescription,
+		favorite: favorite,
 	};
 	const artistAsJson = JSON.stringify(artistToUpdate);
 	const response = await fetch(`${endpoint}/artists/${id}`, {
@@ -59,7 +61,7 @@ async function deleteArtist(id) {
 }
 
 /* Favorites */
-async function getFavorites() {
+/* async function getFavorites() {
 	const response = await fetch(`${endpoint}/favorites`);
 	const data = await response.json();
 	return data;
@@ -93,6 +95,6 @@ async function removeFromFavorite(id) {
 		method: "DELETE",
 	});
 	return response;
-}
+} */
 
-export { endpoint, getArtists, createArtist, updateArtist, deleteArtist, getFavorites };
+export { endpoint, getArtists, createArtist, updateArtist, deleteArtist };

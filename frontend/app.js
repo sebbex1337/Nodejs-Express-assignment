@@ -4,7 +4,7 @@ import { searchArtists, sortArtists, filterArtists } from "./js-modules/sorting.
 window.addEventListener("load", initApp);
 
 let selectedArtist;
-let artists;
+let artists = [];
 
 function initApp() {
 	updateAristsGrid();
@@ -30,7 +30,8 @@ async function createArtistClicked(event) {
 	const website = form.website.value;
 	const shortDescription = form.shortDescription.value;
 	const image = form.image.value;
-	const response = await createArtist(name, birthdate, activeSince, genres, labels, website, image, shortDescription);
+	const favorite = false;
+	const response = await createArtist(name, birthdate, activeSince, genres, labels, website, image, shortDescription, favorite);
 	if (response.ok) {
 		form.reset();
 		updateAristsGrid();
@@ -50,6 +51,8 @@ function selectArtist(artist) {
 	form.website.value = artist.website;
 	form.image.value = artist.image;
 	form.shortDescription.value = artist.shortDescription;
+	form.favorite.checked = artist.favorite;
+	console.log(form.favorite.value);
 
 	form.scrollIntoView({ behavior: "smooth" });
 }
@@ -66,7 +69,8 @@ async function updateArtistClicked(event) {
 	const website = form.website.value;
 	const shortDescription = form.shortDescription.value;
 	const image = form.image.value;
-	const response = await updateArtist(selectedArtist.id, name, birthdate, activeSince, genres, labels, website, image, shortDescription);
+	const favorite = form.favorite.checked;
+	const response = await updateArtist(selectedArtist.id, name, birthdate, activeSince, genres, labels, website, image, shortDescription, favorite);
 	if (response.ok) {
 		form.reset();
 		updateAristsGrid();
@@ -126,6 +130,7 @@ function displayArtist(artist) {
 async function updateAristsGrid() {
 	artists = await getArtists();
 	displayArtists(artists);
+	console.log("Reloaded grid");
 }
 
 /* Sorting */

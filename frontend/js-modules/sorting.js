@@ -19,6 +19,9 @@ function filterArtists(listOfArtists, filterBy) {
 	switch (filterBy) {
 		case "":
 			return listOfArtists;
+		case "favorites":
+			console.log(listOfArtists);
+			return listOfArtists.filter((artist) => artist.favorite === true);
 		case "Pop":
 			return listOfArtists.filter((artist) => artist.genres.includes(filterBy));
 		case "Hip-hop":
