@@ -67,16 +67,8 @@ async function getFavorites() {
 	return data;
 }
 
-async function addToFavorite(id, name, birthdate, activeSince, genres, labels, website, image, shortDescription) {
+async function addToFavorite(id) {
 	const newFav = {
-		name: name,
-		birthdate: birthdate,
-		activeSince: activeSince,
-		genres: genres,
-		labels: labels,
-		website: website,
-		image: image,
-		shortDescription: shortDescription,
 		id: id,
 	};
 	const newFavAsJson = JSON.stringify(newFav);
@@ -97,4 +89,4 @@ async function removeFromFavorite(id) {
 	return response;
 }
 
-export { endpoint, getArtists, createArtist, updateArtist, deleteArtist, getFavorites };
+export { endpoint, getArtists, createArtist, updateArtist, deleteArtist, getFavorites, addToFavorite, removeFromFavorite };

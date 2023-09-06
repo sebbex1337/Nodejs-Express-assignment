@@ -1,10 +1,11 @@
-import { createArtist, getArtists, updateArtist, deleteArtist, getFavorites } from "./js-modules/http.js";
-import { searchArtists, sortArtists, filterArtists } from "./js-modules/sorting.js";
+import { createArtist, getArtists, updateArtist, deleteArtist, getFavorites, addToFavorite, removeFromFavorite } from "./js-modules/http.js";
+import { sortArtists, filterArtists } from "./js-modules/sorting.js";
 
 window.addEventListener("load", initApp);
 
 let selectedArtist;
 let artists = [];
+let favoriteIds = [];
 
 function initApp() {
 	updateAristsGrid();
@@ -13,8 +14,19 @@ function initApp() {
 	document.querySelector("#form-update").addEventListener("submit", updateArtistClicked);
 	document.querySelector("#sort-by").addEventListener("change", sortByChanged);
 	document.querySelector("#filter-by").addEventListener("change", filterByChanged);
-	document.querySelector("#input-search").addEventListener("keyup", inputSearchChanged);
-	document.querySelector("#input-search").addEventListener("search", inputSearchChanged);
+	document.querySelector("#favoritesCheckBox").addEventListener("change", favoritesClicked);
+	/* 	document.querySelector("#input-search").addEventListener("keyup", inputSearchChanged);
+	document.querySelector("#input-search").addEventListener("search", inputSearchChanged); */
+}
+
+function favoritesClicked(event) {
+	const isChecked = event.target.checked;
+	console.log(isChecked);
+	if (isChecked) {
+		displayArtists(favoriteIds);
+	} else {
+		updateAristsGrid();
+	}
 }
 
 /* Event functions */
@@ -116,17 +128,23 @@ function displayArtist(artist) {
 				<section class="btns">
 					<button class="btn-delete">Delete</button>
 					<button class="btn-update">Update</button>
+					<button class="btn-add">Add to Favorites</button>
+					<button class="btn-remove">Remove from Favorites</button>
 				</section>
 			</article>
 		`
 	);
 	document.querySelector("#artists article:last-child .btn-update").addEventListener("click", () => selectArtist(artist));
 	document.querySelector("#artists article:last-child .btn-delete").addEventListener("click", () => deleteArtistClicked(artist.id));
+	document.querySelector("#artists article:last-child .btn-add").addEventListener("click", () => addToFavorite(artist.id));
+	document.querySelector("#artists article:last-child .btn-remove").addEventListener("click", () => removeFromFavorite(artist.id));
 }
 
 /* Function for updating the artist grid so they don't duplicate */
 async function updateAristsGrid() {
 	artists = await getArtists();
+	favoriteIds = await getFavorites();
+	console.log(favoriteIds);
 	displayArtists(artists);
 	console.log("Reloaded grid");
 }
@@ -144,8 +162,9 @@ function filterByChanged(event) {
 }
 
 /* Searching */
-function inputSearchChanged(event) {
+/* function inputSearchChanged(event) {
 	const value = event.target.value;
 	const artistToSearch = searchArtists(artists, value);
 	displayArtists(artistToSearch);
 }
+ */

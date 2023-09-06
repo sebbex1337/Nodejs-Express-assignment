@@ -89,7 +89,7 @@ app.post("/favorites", async (request, response) => {
 	}
 
 	const artists = await getArtists();
-	const favorites = artists.filter((artist) => favID.includes(artist.id));
+	const favorites = artists.filter((artist) => favs.includes(artist.id));
 	response.json(favorites);
 });
 

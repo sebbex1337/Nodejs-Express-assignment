@@ -19,7 +19,6 @@
 			</select>
 			<select id="filter-by">
 				<option value="" selected>No filter</option>
-				<option value="favorites">Favorites</option>
 				<option value="Pop">Pop</option>
 				<option value="Hip-hop">Hip-hop</option>
 				<option value="R&B">R&B</option>
@@ -33,9 +32,13 @@
 				<option value="Rock">Rock</option>
 				<option value="Soul">Soul</option>
 			</select>
-			<div>
-				<input id="input-search" type="search" placeholder="Search by name" />
-			</div>
+			<section id="favorites">
+				<label for="checkbox-favorites" id="checkbox-favorites">
+					Favorites only
+					<input type="checkbox" id="favoritesCheckBox" />
+				</label>
+				<!-- <input id="input-search" type="search" placeholder="Search by name" /> -->
+			</section>
 		</section>
 		<main>
 			<section id="artists" class="grid-container"></section>
