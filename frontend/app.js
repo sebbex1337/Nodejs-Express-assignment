@@ -25,7 +25,7 @@ function favoritesClicked(event) {
 	if (isChecked) {
 		displayArtists(favoriteIds);
 	} else {
-		updateAristsGrid();
+		displayArtists(artists);
 	}
 }
 

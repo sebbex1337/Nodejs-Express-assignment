@@ -73,6 +73,25 @@ button {
 	gap: 1em;
 }
 
+#favoritesCheckBox {
+	border: 2px solid black;
+	height: 35px;
+	width: 35px;
+	margin: 0 1em;
+}
+
+#checkbox-favorites {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#favorites {
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
+
 /* Grid styling on main */
 .grid-container {
 	display: grid;
