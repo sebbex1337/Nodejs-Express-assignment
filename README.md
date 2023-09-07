@@ -10,4 +10,4 @@ Clone this project and open it with live server. Then run
 npm start
 ```
 
-To start the backend
+in the terminal to start the backend
