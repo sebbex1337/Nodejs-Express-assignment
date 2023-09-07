@@ -46,10 +46,4 @@ function filterArtists(listOfArtists, filterBy) {
 	}
 }
 
-/* Searching */
-/* function searchArtists(listOfArtists, searchValue) {
-	searchValue = searchValue.toLowerCase();
-	return listOfArtists.filter((artist) => artist.name.toLowerCase().includes(searchValue));
-} */
-
 export { sortArtists, filterArtists };

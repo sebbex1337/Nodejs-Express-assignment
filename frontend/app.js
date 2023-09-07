@@ -15,8 +15,6 @@ function initApp() {
 	document.querySelector("#sort-by").addEventListener("change", sortByChanged);
 	document.querySelector("#filter-by").addEventListener("change", filterByChanged);
 	document.querySelector("#favoritesCheckBox").addEventListener("change", favoritesClicked);
-	/* 	document.querySelector("#input-search").addEventListener("keyup", inputSearchChanged);
-	document.querySelector("#input-search").addEventListener("search", inputSearchChanged); */
 }
 
 function favoritesClicked(event) {
@@ -160,11 +158,3 @@ function filterByChanged(event) {
 	const selectedValue = event.target.value;
 	displayArtists(filterArtists(artists, selectedValue));
 }
-
-/* Searching */
-/* function inputSearchChanged(event) {
-	const value = event.target.value;
-	const artistToSearch = searchArtists(artists, value);
-	displayArtists(artistToSearch);
-}
- */
