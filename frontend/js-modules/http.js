@@ -79,14 +79,14 @@ async function addToFavorite(id) {
 			"Content-Type": "application/json",
 		},
 	});
-	return response;
+	//return response;
 }
 
 async function removeFromFavorite(id) {
 	const response = await fetch(`${endpoint}/favorites/${id}`, {
 		method: "DELETE",
 	});
-	return response;
+	//return response;
 }
 
 export { endpoint, getArtists, createArtist, updateArtist, deleteArtist, getFavorites, addToFavorite, removeFromFavorite };
