@@ -135,12 +135,7 @@ function displayArtist(artist) {
 	document.querySelector("#artists article:last-child .btn-update").addEventListener("click", () => selectArtist(artist));
 	document.querySelector("#artists article:last-child .btn-delete").addEventListener("click", () => deleteArtistClicked(artist.id));
 	document.querySelector("#artists article:last-child .btn-add").addEventListener("click", () => addToFavorite(artist.id));
-	document.querySelector("#artists article:last-child .btn-remove").addEventListener("click", (e) => {
-		console.log(e);
-		e.preventDefault();
-				removeFromFavorite(artist.id);
-		console.log("Done removing");
-	});
+	document.querySelector("#artists article:last-child .btn-remove").addEventListener("click", () => removeFromFavorite(artist.id));
 }
 
 /* Function for updating the artist grid so they don't duplicate */
